@@ -21,16 +21,17 @@ client.on('ready', () => {
 client.on('message', message => {
     if (!message.content.toUpperCase().startsWith(Configs.bot.prefix) || message.author.bot) return;
 
-    const args = message.content.slice(Configs.bot.prefix.length + 1).split(' ');
+    let args = message.content.slice(Configs.bot.prefix.length + 1).split(' ');
     const command = args.shift().toLowerCase();
-
-    console.log({ args, command });
 
     if (command == null || command.length <= 0) {
         message.channel.send(Configs.bot.introduction);
     } else if (client.commands.has(command)) {
-        //client.commands.get(command).execute(message, args);
-        message.channel.send(`Command: ${command}, Args: ${args}`);
+        if (command === 'help') {
+            args = client.commands;
+        }
+
+        client.commands.get(command).execute(message, args);
     } else {
         message.channel.send(Configs.bot.command.error);
     }
