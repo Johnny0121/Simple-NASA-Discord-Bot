@@ -1,0 +1,29 @@
+{
+  "name": "simple-nasa-discord-bot",
+  "version": "1.0.0",
+  "description": "A simple private discord bot that interacts with some NASA Open APIs. \r Please note that this is repository is just for fun and to test NASA's APIs, so it's nothing serious.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnny0121/Simple-NASA-Discord-Bot.git"
+  },
+  "keywords": [
+    "nasa",
+    "discord",
+    "bot",
+    "nodejs"
+  ],
+  "author": "Johnny Le",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Johnny0121/Simple-NASA-Discord-Bot/issues"
+  },
+  "homepage": "https://github.com/Johnny0121/Simple-NASA-Discord-Bot#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "dotenv": "^8.2.0"
+  }
+}
