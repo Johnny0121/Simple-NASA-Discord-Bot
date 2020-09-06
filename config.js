@@ -13,6 +13,14 @@ var config = {
             endpoint: 'https://api.nasa.gov/planetary/apod',
             method: 'GET'
         },
+        insight: {
+            endpoint: 'https://api.nasa.gov/insight_weather',
+            method: 'GET'
+        },
+        neows: {
+            endpoint: 'https://api.nasa.gov/neo/rest/v1/feed',
+            method: 'GET'
+        },
         downtime: 'Oh no, it seems like there is downtime for the current service you\'re trying to interact with. Please try again at a later time!'
     }
 };

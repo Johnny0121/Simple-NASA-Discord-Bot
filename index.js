@@ -11,7 +11,7 @@ client.commands = new Discord.Collection();
 const commandFiles = FileSystem.readdirSync('./commands').filter(file => file.endsWith('.js'));
 for (const file of commandFiles) {
     const command = require(`./commands/${file}`);
-    client.commands.set(command.name, command);
+    client.commands.set(command.name.toLowerCase(), command);
 }
 
 client.on('ready', () => {
@@ -20,6 +20,8 @@ client.on('ready', () => {
 
 client.on('message', message => {
     if (!message.content.toUpperCase().startsWith(Configs.bot.prefix) || message.author.bot) return;
+
+    console.log(client.commands);
 
     let args = message.content.slice(Configs.bot.prefix.length + 1).split(' ');
     const command = args.shift().toLowerCase();
