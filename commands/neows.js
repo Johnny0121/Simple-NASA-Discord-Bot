@@ -44,8 +44,7 @@ module.exports = {
                             .setDescription(description)
                             .setTimestamp()
                             .setFooter('NeoWs Service')
-                            .addFields(fields)
-                            .addField({ name: 'REST Call'})
+                            .addFields(fields);
 
 
                         message.channel.send(embedResponse);
